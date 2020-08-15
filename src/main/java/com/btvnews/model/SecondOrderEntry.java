@@ -1,4 +1,4 @@
-package com.btvnews.chain;
+package com.btvnews.model;
 
 import java.util.Objects;
 

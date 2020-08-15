@@ -1,4 +1,4 @@
-package com.btvnews.chain;
+package com.btvnews.model;
 
 public class PrefixSum {
   private String word;

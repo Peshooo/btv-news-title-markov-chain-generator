@@ -1,4 +1,4 @@
-package com.btvnews.chain;
+package com.btvnews.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,10 +17,15 @@ public class OccurrenceCounter {
   }
 
   public ArrayList<PrefixSum> toPrefixSums() {
-    ArrayList<PrefixSum> prefixSums = new ArrayList<>();
-
-    return count.entrySet().stream()
+    ArrayList<PrefixSum> prefixSums = count.entrySet().stream()
         .map(entry -> new PrefixSum(entry.getKey(), entry.getValue()))
         .collect(Collectors.toCollection(ArrayList::new));
+
+    for (int i = 1; i < prefixSums.size(); i++) {
+      long sum = prefixSums.get(i - 1).getSum() + prefixSums.get(i).getSum();
+      prefixSums.get(i).setSum(sum);
+    }
+
+    return prefixSums;
   }
 }

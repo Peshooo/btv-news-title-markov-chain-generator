@@ -1,4 +1,4 @@
 package com.btvnews;
 
-public class PageProcessor {
+public class SectionProcessor {
 }
